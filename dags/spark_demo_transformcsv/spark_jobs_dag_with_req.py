@@ -10,7 +10,7 @@ default_args = {
 }
 
 spark_dag = DAG(
-        dag_id = "spark_airflow_demo_tranformcsv_requirements_demo",
+        dag_id = "demo_tranform_csv",
         default_args=default_args,
         schedule_interval=None,
         dagrun_timeout=timedelta(minutes=60),
