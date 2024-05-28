@@ -41,7 +41,7 @@ spec:
         claimName: s3mount
     - name: venv-lib
       emptyDir: {}
-  mainApplicationFile: "local:///mnt/s3mount/sparkdemo-transfromcsv/spark_etl_script_docker.py"
+  mainApplicationFile: "local:///mnt/s3mount/demo-deltalake/demo-deltalake-job.py"
   sparkVersion: "3.5.1"
   restartPolicy:
     type: OnFailure
@@ -67,7 +67,7 @@ spec:
     initContainers:
       - name: install-requirements
         image: "bacnv/spark:3.5.1-scala2.12-java11-python3-r-ubuntu-root-0.0.1"
-        command: ["pip", "install","--target=/mnt/venv-lib", "-r", "/mnt/s3mount/sparkdemo-transfromcsv/requirements.txt"]
+        command: ["pip", "install","--target=/mnt/venv-lib", "-r", "/mnt/s3mount/demo-deltalake/requirements.txt"]
         # command: ["pip", "--version"]
         volumeMounts:
           - name:  s3mount
